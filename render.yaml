@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: voicestudio-backend
+    runtime: docker
+    dockerfilePath: ./deploy/Dockerfile.render
+    dockerContext: .
+    plan: standard
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: "3900"
+      - key: OMNIVOICE_PORT
+        value: "3900"
+      - key: OMNIVOICE_SERVER_MODE
+        value: "1"
+      - key: OMNIVOICE_ALLOWED_ORIGINS
+        value: "https://your-project.pages.dev"
+      - key: OMNIVOICE_API_KEY
+        generateValue: true
