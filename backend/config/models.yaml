@@ -48,7 +48,7 @@ models:
     role: TTS
     engines: [omnivoice, omnivoice-subprocess]
     size_gb: 2.4
-    required: true
+    required: false
     curated_on: [all]
 
   - repo_id: "audio-cpp/audio.cpp-gguf"
