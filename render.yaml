@@ -14,6 +14,6 @@ services:
       - key: OMNIVOICE_SERVER_MODE
         value: "1"
       - key: OMNIVOICE_ALLOWED_ORIGINS
-        value: "https://your-project.pages.dev"
+        value: "https://75bd51f1.voice-95.pages.dev"
       - key: OMNIVOICE_API_KEY
         generateValue: true
