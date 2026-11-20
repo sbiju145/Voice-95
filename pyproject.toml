@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "omnivoice"
+version = "0.5.9-beta.6"
+description = "VoiceStudio — Lightweight Cloud API Edition"
+readme = "README.md"
+license = "AGPL-3.0-only"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi<0.137",
+    "scalar-fastapi",
+    "uvicorn",
+    "python-multipart>=0.0.31",
+    "websockets",
+    "pydantic-settings>=2.14.2",
+    "alembic>=1.16",
+    "cryptography>=41",
+    "httpx>=0.28.1",
+    "socksio>=1.0",
+    "truststore>=0.9",
+    "openai>=1.40",
+    "litellm>=1.103.1,<2",
+    "boto3>=1.40",
+    "google-auth>=2.29,<3",
+    "pypdf>=6.21.4",
+    "num2words>=0.5.14",
+    "psutil>=7.2.2",
+    "pillow>=12.1.0",
+    "numpy",
+    "soundfile",
+    "pydub",
+    "audioop-lts ; python_version >= '3.13'",
+    "imageio-ffmpeg>=0.6.0",
+    "yt-dlp>=2026.7.4",
+    "huggingface_hub>=1.7",
+    "edge-tts",
+]
+
+[project.scripts]
+omnivoice-infer = "omnivoice.cli.infer:main"
+omnivoice-infer-batch = "omnivoice.cli.infer_batch:main"
+omnivoice-demo = "omnivoice.cli.demo:main"
+omnivoice-dub = "omnivoice.cli.dub:main"
+
+[tool.hatch.build.targets.sdist]
+include = ["omnivoice"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["omnivoice"]
